@@ -15,7 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thevisionarywealthgroup.com"),
   ...buildMetadata("/"),
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: "/logo.png",
   },
 };
 
