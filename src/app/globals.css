@@ -53,6 +53,14 @@ nav.scrolled .nav-inner { padding: 0.8rem 4rem; box-shadow: 0 2px 20px rgba(0,0,
     background: transparent;
     cursor: pointer;
     padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+.nav-brand:hover,
+.nav-brand:focus,
+.nav-brand:visited {
+    text-decoration: none;
+    color: inherit;
 }
 .nav-logo-icon {
     width: 28px;
