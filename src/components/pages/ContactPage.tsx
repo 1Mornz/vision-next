@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { useApplyModal } from "@/context/ApplyModalContext";
+import OnboardingLink from "@/components/OnboardingLink";
 import { useFadeUp } from "@/hooks/useFadeUp";
 
 export default function ContactPage() {
-  const { openApplyModal } = useApplyModal();
   const ref = useFadeUp<HTMLDivElement>();
   const [contactSubmitting, setContactSubmitting] = useState(false);
   const [contactError, setContactError] = useState("");
@@ -73,9 +72,9 @@ export default function ContactPage() {
           <p className="section-body" style={{ color: "rgba(255,255,255,0.55)", marginTop: "1rem", marginBottom: "2.5rem" }}>
             Whether you&apos;re ready to join the team, have questions about the opportunity, or just want to learn more, we want to hear from you. Real people answer here.
           </p>
-          <button className="btn-gold" onClick={openApplyModal}>
+          <OnboardingLink className="btn-gold">
             JOIN THE TEAM
-          </button>
+          </OnboardingLink>
         </div>
         <div className="contact-hero-img">
           <Image src="/DSC02610.webp" alt="Contact Visionaries" fill sizes="50vw" style={{ objectFit: "cover", opacity: 0.85 }} />

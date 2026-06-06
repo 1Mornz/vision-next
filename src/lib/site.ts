@@ -1,61 +1,10 @@
 export const BASE_URL = "https://thevisionarywealthgroup.com";
+export const ONBOARDING_URL =
+  process.env.NEXT_PUBLIC_ONBOARDING_URL ?? "https://onboarding.thevisionarywealthgroup.com";
 export const DEFAULT_TITLE = "Visionaries | The Greatest Team To Ever Do It";
 export const DEFAULT_DESCRIPTION =
   "Visionaries helps agents level up in every aspect of life through mentorship, training, and leadership development.";
 export const DEFAULT_IMAGE = `${BASE_URL}/og-banner.png`;
-
-export const US_STATES = [
-  "Alabama",
-  "Alaska",
-  "Arizona",
-  "Arkansas",
-  "California",
-  "Colorado",
-  "Connecticut",
-  "Delaware",
-  "Florida",
-  "Georgia",
-  "Hawaii",
-  "Idaho",
-  "Illinois",
-  "Indiana",
-  "Iowa",
-  "Kansas",
-  "Kentucky",
-  "Louisiana",
-  "Maine",
-  "Maryland",
-  "Massachusetts",
-  "Michigan",
-  "Minnesota",
-  "Mississippi",
-  "Missouri",
-  "Montana",
-  "Nebraska",
-  "Nevada",
-  "New Hampshire",
-  "New Jersey",
-  "New Mexico",
-  "New York",
-  "North Carolina",
-  "North Dakota",
-  "Ohio",
-  "Oklahoma",
-  "Oregon",
-  "Pennsylvania",
-  "Rhode Island",
-  "South Carolina",
-  "South Dakota",
-  "Tennessee",
-  "Texas",
-  "Utah",
-  "Vermont",
-  "Virginia",
-  "Washington",
-  "West Virginia",
-  "Wisconsin",
-  "Wyoming",
-] as const;
 
 export type PageMeta = {
   title: string;

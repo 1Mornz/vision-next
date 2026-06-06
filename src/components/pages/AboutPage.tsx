@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useApplyModal } from "@/context/ApplyModalContext";
+import OnboardingLink from "@/components/OnboardingLink";
 import { useFadeUp } from "@/hooks/useFadeUp";
 
 const TEAM = [
@@ -43,7 +43,6 @@ const TEAM = [
 ];
 
 export default function AboutPage() {
-  const { openApplyModal } = useApplyModal();
   const ref = useFadeUp<HTMLDivElement>();
 
   return (
@@ -60,9 +59,9 @@ export default function AboutPage() {
           <p className="section-body" style={{ color: "rgba(255,255,255,0.6)", marginTop: "1rem", marginBottom: "2.5rem" }}>
             We didn&apos;t start Visionaries to build a company. We started it to help insurance agents level up in every aspect of life, providing the framework to serve others and build a successful career.
           </p>
-          <button className="btn-outline-white" onClick={openApplyModal}>
+          <OnboardingLink className="btn-outline-white">
             JOIN THE TEAM
-          </button>
+          </OnboardingLink>
         </div>
         <div className="about-hero-img">
           <Image src="/DSC02610.webp" alt="About Visionaries" fill sizes="50vw" style={{ objectFit: "cover", opacity: 0.75 }} />
@@ -145,9 +144,9 @@ export default function AboutPage() {
           <br />
           <span>EVERY ASPECT OF LIFE?</span>
         </h2>
-        <button className="btn-gold" onClick={openApplyModal}>
+        <OnboardingLink className="btn-gold">
           JOIN THE TEAM
-        </button>
+        </OnboardingLink>
       </section>
     </div>
   );

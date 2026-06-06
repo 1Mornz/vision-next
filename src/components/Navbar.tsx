@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { useApplyModal } from "@/context/ApplyModalContext";
+import OnboardingLink from "@/components/OnboardingLink";
 
 const NAV_LINKS = [
   { href: "/", label: "HOME" },
@@ -16,7 +16,6 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { openApplyModal } = useApplyModal();
   const [menuOpen, setMenuOpen] = useState(false);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
   const [navLogoSrc, setNavLogoSrc] = useState("/logo.webp");
@@ -96,9 +95,7 @@ export default function Navbar() {
         </Link>
 
         <div className="nav-right">
-          <button className="nav-apply-btn" type="button" onClick={openApplyModal}>
-            JOIN
-          </button>
+          <OnboardingLink className="nav-apply-btn">JOIN</OnboardingLink>
           <button
             type="button"
             className={`hamburger${menuOpen ? " open" : ""}`}
@@ -127,16 +124,9 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
-        <button
-          type="button"
-          className="mobile-apply-btn"
-          onClick={() => {
-            closeMobileMenu();
-            openApplyModal();
-          }}
-        >
+        <OnboardingLink className="mobile-apply-btn" onClick={closeMobileMenu}>
           JOIN THE TEAM →
-        </button>
+        </OnboardingLink>
       </div>
     </nav>
   );

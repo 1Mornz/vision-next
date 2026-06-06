@@ -1,11 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { useApplyModal } from "@/context/ApplyModalContext";
+import OnboardingLink from "@/components/OnboardingLink";
 
 export default function Footer() {
-  const { openApplyModal } = useApplyModal();
-
   return (
     <footer>
       <div className="footer-grid">
@@ -41,9 +37,7 @@ export default function Footer() {
           <h4>Company</h4>
           <ul>
             <li>
-              <button type="button" className="footer-link-btn" onClick={openApplyModal}>
-                Join the Team
-              </button>
+              <OnboardingLink className="footer-link-btn">Join the Team</OnboardingLink>
             </li>
             <li>
               <Link href="/contact">Contact Us</Link>

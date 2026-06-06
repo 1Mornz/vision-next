@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useApplyModal } from "@/context/ApplyModalContext";
+import OnboardingLink from "@/components/OnboardingLink";
 import { useFadeUp } from "@/hooks/useFadeUp";
 import {
   agentTestimonials,
@@ -12,7 +12,6 @@ import {
 } from "@/lib/testimonials";
 
 export default function TestimonialsPage() {
-  const { openApplyModal } = useApplyModal();
   const ref = useFadeUp<HTMLDivElement>();
   const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
   const [mobileIndex, setMobileIndex] = useState(0);
@@ -256,9 +255,9 @@ export default function TestimonialsPage() {
           <br />
           <span>UP THERE NEXT.</span>
         </h2>
-        <button className="btn-gold" onClick={openApplyModal}>
+        <OnboardingLink className="btn-gold">
           START YOUR JOURNEY
-        </button>
+        </OnboardingLink>
       </section>
 
       {activeTestimonialVideo && (

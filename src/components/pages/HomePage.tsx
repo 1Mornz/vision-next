@@ -3,11 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useApplyModal } from "@/context/ApplyModalContext";
+import OnboardingLink from "@/components/OnboardingLink";
 import { useFadeUp } from "@/hooks/useFadeUp";
 
 export default function HomePage() {
-  const { openApplyModal } = useApplyModal();
   const [isDesktop, setIsDesktop] = useState(true);
   const ref = useFadeUp<HTMLDivElement>([isDesktop]);
 
@@ -33,13 +32,13 @@ export default function HomePage() {
           <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: "var(--gray)", fontWeight: 300, maxWidth: 440, marginBottom: "2.5rem" }}>
             Visionaries helps insurance agents level up in every aspect of life while providing the framework to serve others and build a successful career.
           </p>
-          <button className="btn-primary" onClick={openApplyModal}>
+          <OnboardingLink className="btn-primary">
             JOIN THE TEAM{" "}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </button>
+          </OnboardingLink>
         </div>
         <div className="home-hero-right">
           <Image src="/DSC02610.webp" alt="Visionaries team" fill priority sizes="50vw" style={{ objectFit: "cover", opacity: 0.85 }} />
@@ -79,9 +78,9 @@ export default function HomePage() {
         <p className="stat-desc">
           Real impact, real results. Built by agents who are committed to serving others and leveling up every aspect of their lives.
         </p>
-        <button className="btn-outline-white" style={{ borderColor: "var(--gold)", color: "var(--gold)" }} onClick={openApplyModal}>
+        <OnboardingLink className="btn-outline-white" style={{ borderColor: "var(--gold)", color: "var(--gold)" }}>
           JOIN THE TEAM
-        </button>
+        </OnboardingLink>
       </section>
 
       <section className="built-section">
@@ -211,9 +210,9 @@ export default function HomePage() {
           <br />
           <span>JOIN US.</span>
         </h2>
-        <button className="btn-gold" onClick={openApplyModal}>
+        <OnboardingLink className="btn-gold">
           JOIN OUR TEAM
-        </button>
+        </OnboardingLink>
       </section>
     </div>
   );

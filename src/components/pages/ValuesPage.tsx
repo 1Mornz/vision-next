@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useApplyModal } from "@/context/ApplyModalContext";
+import OnboardingLink from "@/components/OnboardingLink";
 import { useFadeUp } from "@/hooks/useFadeUp";
 
 const VALUES = [
@@ -23,7 +23,6 @@ const PILLARS = [
 ];
 
 export default function ValuesPage() {
-  const { openApplyModal } = useApplyModal();
   const ref = useFadeUp<HTMLDivElement>();
 
   return (
@@ -43,9 +42,9 @@ export default function ValuesPage() {
             <p className="section-body" style={{ marginTop: "1.2rem", marginBottom: "2.5rem" }}>
               Our values aren&apos;t a slide deck or a poster on the wall. They&apos;re decisions we make every day, how we treat clients, train agents, and hold each other accountable.
             </p>
-            <button className="btn-primary" onClick={openApplyModal}>
+            <OnboardingLink className="btn-primary">
               JOIN THE TEAM
-            </button>
+            </OnboardingLink>
           </div>
           <div className="values-hero-img">
             <Image src="/DSC00460.webp" alt="Our Values" fill sizes="50vw" style={{ objectFit: "cover" }} />
@@ -83,9 +82,9 @@ export default function ValuesPage() {
         <div className="manifesto-quote fade-up">
           &quot;WE HELP AGENTS LEVEL UP IN EVERY ASPECT OF LIFE. MENTALLY. PHYSICALLY. SPIRITUALLY. FINANCIALLY. THIS IS<span> VISIONARIES</span>. THE GREATEST TEAM TO EVER DO IT.&quot;
         </div>
-        <button className="btn-gold" onClick={openApplyModal}>
+        <OnboardingLink className="btn-gold">
           LIVE THESE VALUES. JOIN US
-        </button>
+        </OnboardingLink>
       </section>
 
       <section className="values-pillars">
@@ -120,9 +119,9 @@ export default function ValuesPage() {
           <br />
           <span>UNSTOPPABLE.</span>
         </h2>
-        <button className="btn-gold" onClick={openApplyModal}>
+        <OnboardingLink className="btn-gold">
           JOIN THE TEAM
-        </button>
+        </OnboardingLink>
       </section>
     </div>
   );
